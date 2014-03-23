@@ -9,7 +9,7 @@ import org.bukkit.configuration.serialization.ConfigurationSerialization;
 import org.bukkit.permissions.PermissionDefault;
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.PluginManager;
-import org.mcstats.Metrics;
+//import org.mcstats.Metrics;
 
 import be.Balor.Kit.ArmoredKitInstance;
 import be.Balor.Kit.KitInstance;
@@ -186,14 +186,15 @@ import belgium.Balor.Workers.InvisibleWorker;
  */
 public final class AdminCmd extends AbstractAdminCmdPlugin {
 	private ACHelper worker;
-	private Metrics metrics;
+	//private Metrics metrics;
 
 	/**
-	 * @return the metrics
-	 */
+	 * @return the metrics - fuck you metrics
+	 
 	public Metrics getMetrics() {
 		return metrics;
 	}
+	*/
 
 	@Override
 	public void onDisable() {
@@ -224,7 +225,7 @@ public final class AdminCmd extends AbstractAdminCmdPlugin {
 
 		DebugLog.setFile(getDataFolder().getPath());
 
-		setMetrics();
+		//setMetrics();
 
 		final PluginDescriptionFile pdfFile = this.getDescription();
 		DebugLog.INSTANCE.info("Plugin Version : " + pdfFile.getVersion());
@@ -257,7 +258,7 @@ public final class AdminCmd extends AbstractAdminCmdPlugin {
 
 	/**
 	 * 
-	 */
+	 
 	private void setMetrics() {
 		try {
 			metrics = new Metrics(this);
@@ -331,6 +332,7 @@ public final class AdminCmd extends AbstractAdminCmdPlugin {
 					}
 				}, 30 * Utils.secInTick);
 	}
+*/
 
 	@Override
 	public void registerCmds() {

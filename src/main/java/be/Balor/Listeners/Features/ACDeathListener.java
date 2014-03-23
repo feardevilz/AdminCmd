@@ -214,14 +214,6 @@ public class ACDeathListener implements Listener {
                                 } else if (((Arrow) damager).getShooter() instanceof Player) {
                                         return ACHelper.getInstance().getDeathMessage("ranged") + Users.getPlayerName((Player) ((Arrow) damager).getShooter());
                                 }
-                        } else if (damager instanceof Fireball) {
-                                if (((Fireball) damager).getShooter() == null) {
-                                        return ACHelper.getInstance().getDeathMessage("fireball");
-                                } else if (((Fireball) damager).getShooter() instanceof Ghast) {
-                                        return ACHelper.getInstance().getDeathMessage("ghast");
-                                } else if (((Fireball) damager).getShooter() instanceof Blaze) {
-                                        return ACHelper.getInstance().getDeathMessage("blaze");
-                                }
                         } else if (damager instanceof ThrownPotion) {
                                 if (((ThrownPotion) damager).getShooter() instanceof Player) {
                                         return ACHelper.getInstance().getDeathMessage("potion");

@@ -363,11 +363,12 @@ public class JdbcConnectionPool implements DataSource, ConnectionEventListener {
 
 	/**
 	 * [Not supported]
-	 */
+	 
 
 	@Override
 	public Logger getParentLogger() {
 		return null;
 	}
+*/
 
 }

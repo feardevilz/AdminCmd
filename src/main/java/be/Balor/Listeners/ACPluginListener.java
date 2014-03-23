@@ -16,7 +16,7 @@
  ************************************************************************/
 package be.Balor.Listeners;
 
-import in.mDev.MiracleM4n.mChatSuite.mChatSuite;
+//import in.mDev.MiracleM4n.mChatSuite.mChatSuite;
 import info.somethingodd.OddItem.OddItemBase;
 
 import org.bukkit.event.EventHandler;
@@ -36,7 +36,7 @@ import be.Balor.Tools.Help.HelpLister;
 import be.Balor.bukkit.AdminCmd.ACPluginManager;
 import be.Balor.bukkit.AdminCmd.ConfigEnum;
 import belgium.Balor.Workers.InvisibleWorker;
-import com.nijikokun.bukkit.Permissions.Permissions;
+//import com.nijikokun.bukkit.Permissions.Permissions;
 import com.platymuus.bukkit.permissions.PermissionsPlugin;
 import de.diddiz.LogBlock.LogBlock;
 
@@ -77,16 +77,6 @@ public class ACPluginListener implements Listener {
                         }
 
                 }
-                if (!PermissionManager.isYetiPermissionsSet()) {
-                        final Plugin Permissions = ACPluginManager.getServer()
-                                        .getPluginManager().getPlugin("Permissions");
-                        if (Permissions != null && Permissions.isEnabled()) {
-                                PermissionManager
-                                                .setYetiPermissions(((Permissions) Permissions)
-                                                                .getHandler());
-
-                        }
-                }
                 if (!PermissionManager.isbPermissionsSet()) {
                         final Plugin plugin = ACPluginManager.getServer()
                                         .getPluginManager().getPlugin("bPermissions");
@@ -117,15 +107,6 @@ public class ACPluginListener implements Listener {
                         if (items != null && items.isEnabled()) {
                                 Utils.oddItem = (OddItemBase) items;
                                 ACLogger.info("Successfully linked with OddItem");
-                        }
-                }
-                if (!SuperPermissions.isApiSet()) {
-                        final Plugin mChatPlugin = ACPluginManager.getServer()
-                                        .getPluginManager().getPlugin("mChatSuite");
-                        if (mChatPlugin != null && mChatPlugin.isEnabled()) {
-                                SuperPermissions.setmChatapi((mChatSuite) mChatPlugin);
-                                Utils.mChatPresent = true;
-                                ACLogger.info("Successfully linked with mChatSuite");
                         }
                 }
                 if (Utils.logBlock == null) {

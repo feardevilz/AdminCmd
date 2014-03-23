@@ -33,7 +33,7 @@ import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.Plugin;
-import org.mcstats.Metrics.Graph;
+//import org.mcstats.Metrics.Graph;
 
 import be.Balor.Importer.IImport;
 import be.Balor.Importer.ImportTools;
@@ -1296,9 +1296,9 @@ public class ACHelper {
 			final Channel channel = ConfigEnum.UPDATE_SRC.getString()
 					.equalsIgnoreCase("stable") ? Channel.STABLE : Channel.BETA;
 			new UpdateChecker(channel, coreInstance);
-			final Graph updateChannelGraph = coreInstance.getMetrics()
-					.createGraph("Update Channels");
-			updateChannelGraph.addPlotter(new UpdateChannelPlotter(channel));
+//			final Graph updateChannelGraph = coreInstance.getMetrics()
+//					.createGraph("Update Channels");
+//			updateChannelGraph.addPlotter(new UpdateChannelPlotter(channel));
 		}
 	}
 

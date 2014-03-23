@@ -31,13 +31,13 @@ import be.Balor.Manager.Permissions.Plugins.EssentialsGroupManager;
 import be.Balor.Manager.Permissions.Plugins.IPermissionPlugin;
 import be.Balor.Manager.Permissions.Plugins.PermissionsEx;
 import be.Balor.Manager.Permissions.Plugins.VaultWrapperPermission;
-import be.Balor.Manager.Permissions.Plugins.YetiPermissions;
+//import be.Balor.Manager.Permissions.Plugins.YetiPermissions;
 import be.Balor.Manager.Permissions.Plugins.bPermissions;
 import be.Balor.Tools.Debug.ACLogger;
 import be.Balor.Tools.Debug.DebugLog;
 import be.Balor.bukkit.AdminCmd.ConfigEnum;
 
-import com.nijiko.permissions.PermissionHandler;
+//import com.nijiko.permissions.PermissionHandler;
 import com.platymuus.bukkit.permissions.PermissionsPlugin;
 
 /**
@@ -314,28 +314,6 @@ public class PermissionManager {
 		} else {
 			return false;
 		}
-	}
-
-	/**
-	 * Set Permission Plugin
-	 * 
-	 * @param plugin
-	 * @return
-	 */
-	public static boolean setYetiPermissions(final PermissionHandler plugin) {
-		if (!yetiPermissions && !permissionsEx && !groupManager && !vault) {
-			if (!ConfigEnum.SUPERPERM.getBoolean()) {
-				yetiPermissions = true;
-				permissionHandler = new YetiPermissions(plugin);
-				ACLogger.info("Successfully linked with Yeti's Permissions.");
-			} else if (!warningSend) {
-				ACLogger.info("Plugin Forced to use Offical Bukkit Permission System");
-				warningSend = true;
-			}
-		} else {
-			return false;
-		}
-		return true;
 	}
 
 	/**

@@ -618,7 +618,7 @@ public class CommandManager implements CommandExecutor {
 			}
 
 		}
-		graph = plugin.getMetrics().createGraph("Commands");
+		//graph = plugin.getMetrics().createGraph("Commands");
 		startThreads();
 	}
 

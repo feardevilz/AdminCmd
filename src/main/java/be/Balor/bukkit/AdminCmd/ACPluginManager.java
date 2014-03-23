@@ -25,8 +25,8 @@ import org.bukkit.Bukkit;
 import org.bukkit.Server;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.scheduler.BukkitScheduler;
-import org.mcstats.Metrics;
-import org.mcstats.Metrics.Graph;
+//import org.mcstats.Metrics;
+//import org.mcstats.Metrics.Graph;
 
 import be.Balor.Manager.CommandManager;
 import be.Balor.Manager.Commands.CoreCommand;
@@ -42,7 +42,7 @@ public class ACPluginManager {
 	private final Map<String, AbstractAdminCmdPlugin> pluginInstances = Collections.synchronizedMap(new HashMap<String, AbstractAdminCmdPlugin>());
 	private final static Server server = Bukkit.getServer();
 	private static AbstractAdminCmdPlugin corePlugin;
-	private static Graph graph = null;
+	//private static Graph graph = null;
 
 	/**
 	 * @return the instance
@@ -122,10 +122,11 @@ public class ACPluginManager {
 	/**
 	 * @param metrics
 	 *            the metrics to set
-	 */
+	 
 	static void setMetrics(final Metrics metrics) {
 		ACPluginManager.graph = metrics.createGraph("Plugins");
 	}
+	*/
 
 	public static void unRegisterACPlugin(final Plugin addon) {
 		if (addon instanceof AbstractAdminCmdPlugin) {
@@ -159,7 +160,7 @@ public class ACPluginManager {
 			if (corePlugin == null || addon.equals(corePlugin)) {
 				return;
 			}
-			graph.addPlotter(new Metrics.Plotter() {
+/*			graph.addPlotter(new Metrics.Plotter() {
 
 				@Override
 				public int getValue() {
@@ -171,6 +172,7 @@ public class ACPluginManager {
 					return "Addon " + addon.getAddonName();
 				}
 			});
+*/
 		} else {
 			throw new IllegalArgumentException("Plugin " + addon.getAddonName() + " Already registered.");
 		}
@@ -193,6 +195,7 @@ public class ACPluginManager {
 	protected void unRegisterPlugin(final AbstractAdminCmdPlugin addon) {
 		pluginInstances.remove(addon.getAddonName());
 		if (!addon.equals(corePlugin)) {
+/*			
 			graph.removePlotter(new Metrics.Plotter() {
 
 				@Override
@@ -205,6 +208,7 @@ public class ACPluginManager {
 					return "Addon " + addon.getAddonName();
 				}
 			});
+*/
 		}
 	}
 
